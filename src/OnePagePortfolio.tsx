@@ -2,10 +2,12 @@
 import "./onePagePortfolio.css";
 import NavBar from "./components/NavBar";
 import { useScrollNavigation } from "./hooks/useScrollNavigation";
+import { ArrowDownCircleIcon, ArrowDownIcon, ArrowDownLeftIcon, ArrowTurnLeftDownIcon } from "@heroicons/react/24/outline";
+import { ArrowDownTrayIcon, ArrowTrendingDownIcon, BarsArrowDownIcon } from "@heroicons/react/16/solid";
 
 
 export default function OnePagePortfolio() {
-  const name: string = "Julian Santamaria";
+  const name: string = "Julian";
 
   const sectionIds = ["home", "about", "projects", "contact"];
 
@@ -21,7 +23,11 @@ export default function OnePagePortfolio() {
         id="home"
         className="h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 to-gray-800"
       >
-        <h1 className="text-4xl font-semibold home light">Hi, i'm Julian.</h1>
+        <h1 className="text-4xl font-semibold home light">Hi, i'm {name}.</h1>
+
+        <div className="absolute bottom-4 right-4 flex flex-col justify-center items-center">
+    <ArrowDownIcon className="w-8 h-8 text-zinc-200" />
+  </div>
       </section>
 
 

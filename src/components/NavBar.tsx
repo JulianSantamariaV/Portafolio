@@ -10,7 +10,7 @@ const NavBar = () => {
       {sections.map(({id, icon: Icon}) => (
         <button key={id}
           onClick={() => scrollToSection(id)}
-          className="p-2 drop-shadow-lg cursor-pointer hover:scale-120 hover:shadow-lg box-border border-amber-300 transition-transform ease-in-out duration-300">
+          className="p-2  cursor-pointer hover:scale-120 ease-in-out duration-300">
             <Icon className='w-8 h-8 text-zinc-300'/>          
         </button>
       ))}
