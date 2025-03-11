@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@600&display=swap');
+
+.home {
+    font-family: 'Commissioner', sans-serif;
+    color: #eee;
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.light {
+    background-image: 
+        conic-gradient(
+            from var(--rotate) at 60% 10%,
+            #0b1012 40%,
+            #f4f7fc55,
+            #0b1012 60%
+        );
+    font-size: 120px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rotatelight
+            3s ease-in-out infinite
+            alternate;
+}
+
+@keyframes rotatelight{
+    from {
+        --rotate: 0.15turn
+    }
+    to {
+        --rotate: -0.15turn;
+    }
+}
