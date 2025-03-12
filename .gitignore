@@ -1,0 +1,15 @@
+# Dependencias de Node.js
+node_modules/
+pnpm-lock.yaml
+
+# Archivos de compilación y caché
+dist/
+.vite/
+.vscode/
+.DS_Store
+*.log
+
+# Configuración de entorno
+.env
+.env.local
+.env.*.local

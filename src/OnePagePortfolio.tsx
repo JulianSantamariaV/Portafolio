@@ -3,6 +3,10 @@ import "./onePagePortfolio.css";
 import NavBar from "./components/NavBar";
 import { useScrollNavigation } from "./hooks/useScrollNavigation";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
+import { Toaster } from "sonner";
+import { InputForm } from "./components/Form";
+
+
 
 export default function OnePagePortfolio() {
   const name: string = "Julian";
@@ -13,6 +17,7 @@ export default function OnePagePortfolio() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-zinc-200" onWheelCapture={handleScroll}>
+      <Toaster position="top-right" richColors />
       {/* <DistortedBackground></DistortedBackground> */}
       <NavBar />
 
@@ -28,12 +33,11 @@ export default function OnePagePortfolio() {
   </div>
       </section>
 
-
       <section
         id="about"
         className="h-screen flex items-center justify-center bg-gradient-to-r from-gray-300 to-zinc-500"
       >
-        <h2 className="text-4xl font-semibold">Sobre mí</h2>
+        <h2 className="text-4xl font-semibold text-gray-900">Sobre mí</h2>
       </section>
 
       <section
@@ -45,9 +49,10 @@ export default function OnePagePortfolio() {
 
       <section
         id="contact"
-        className="h-screen flex items-center justify-center bg-gradient-to-r from-red-700 to-red-500"
+        className="h-screen flex items-center justify-center bg-gradient-to-r from-slate-900 to-slate-800"
       >
         <h2 className="text-4xl font-semibold">Contacto</h2>
+        <InputForm></InputForm>
       </section>
     </div>
   );

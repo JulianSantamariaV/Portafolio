@@ -1,3 +1,4 @@
+
 import { sections } from "../utils/sections";
 
 const scrollToSection = (id: string) => {
@@ -6,12 +7,12 @@ const scrollToSection = (id: string) => {
 
 const NavBar = () => {
   return (
-    <nav className="fixed top-0 w-full p-4 mx-auto flex justify-around">
+    <nav className="fixed top-0 w-full p-4 mx-auto flex justify-around bg-transparent">
       {sections.map(({id, icon: Icon}) => (
         <button key={id}
           onClick={() => scrollToSection(id)}
           className="p-2  cursor-pointer hover:scale-120 ease-in-out duration-300">
-            <Icon className='w-8 h-8 text-zinc-300'/>          
+            <Icon className='w-8 h-8 text-zinc-200 mix-blend-difference' />
         </button>
       ))}
     </nav>
