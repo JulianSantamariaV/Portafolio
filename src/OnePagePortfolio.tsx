@@ -3,8 +3,6 @@ import "./onePagePortfolio.css";
 import NavBar from "./components/NavBar";
 import { useScrollNavigation } from "./hooks/useScrollNavigation";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
-import { ArrowDownTrayIcon, ArrowTrendingDownIcon, BarsArrowDownIcon } from "@heroicons/react/16/solid";
-
 
 export default function OnePagePortfolio() {
   const name: string = "Julian";
