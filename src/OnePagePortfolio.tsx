@@ -2,7 +2,7 @@
 import "./onePagePortfolio.css";
 import NavBar from "./components/NavBar";
 import { useScrollNavigation } from "./hooks/useScrollNavigation";
-import { ArrowDownCircleIcon, ArrowDownIcon, ArrowDownLeftIcon, ArrowTurnLeftDownIcon } from "@heroicons/react/24/outline";
+import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import { ArrowDownTrayIcon, ArrowTrendingDownIcon, BarsArrowDownIcon } from "@heroicons/react/16/solid";
 
 
