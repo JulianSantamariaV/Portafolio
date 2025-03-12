@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-<<<<<<< Updated upstream
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
@@ -124,9 +123,7 @@
   }
 }
 
-=======
 
 html {
     font-family: 'Commissioner', sans-serif;
 }
->>>>>>> Stashed changes
