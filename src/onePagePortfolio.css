@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@600&display=swap');
 
-.home {
-    font-family: 'Commissioner', sans-serif;
-    color: #eee;
-}
 
 @property --rotate {
     syntax: "<angle>";
@@ -27,6 +23,8 @@
             3s ease-in-out infinite
             alternate;
 }
+
+
 
 @keyframes rotatelight{
     from {
