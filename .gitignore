@@ -8,6 +8,7 @@ dist/
 .vscode/
 .DS_Store
 *.log
+npm-debug.log*
 
 # Configuración de entorno
 .env
