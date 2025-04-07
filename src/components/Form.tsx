@@ -3,22 +3,22 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, FormProvider } from "react-hook-form";
 import { z } from "zod";
-import { Input } from "@/components/ui/input";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"; // ✅ Importación corregida
+} from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea"
+
 
 const FormSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+  message: z.string().min(2, {
+    message: "Message must be at least 2 characters.",
   }),
 });
 
@@ -26,18 +26,17 @@ export function InputForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      username: "",
+      message: "",
     },
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast.success("Formulario enviado correctamente!", {
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    });
+    if (data) {
+      toast.success("Formulario enviado correctamente!");
+    } else {
+      toast.error("Formulario no enviado");
+    } 
+    console.log(data);
   }
 
   return (
@@ -49,16 +48,13 @@ export function InputForm() {
         >
           <FormField
             control={form.control}
-            name="username"
+            name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Username</FormLabel>
+                <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
-                </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
+                  <Textarea placeholder="Your message" {...field} />
+                </FormControl>                
                 <FormMessage />
               </FormItem>
             )}

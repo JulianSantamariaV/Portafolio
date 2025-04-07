@@ -1,38 +1,153 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600&family=Inter:wght@400;500;600&display=swap');
 
-.home {
-    font-family: 'Commissioner', sans-serif;
-    color: #eee;
+:root {
+  --primary-glow: conic-gradient(
+    from 180deg at 50% 50%,
+    #2a2a2a 0deg,
+    #2a2a2a 55deg,
+    #3a3a3a 120deg,
+    #2a2a2a 160deg,
+    transparent 360deg
+  );
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.home {
+  font-family: 'Commissioner', sans-serif;
+  color: #eee;
+}
+
+/* Background Grid Pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+/* Title Animation */
 @property --rotate {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
 .light {
-    background-image: 
-        conic-gradient(
-            from var(--rotate) at 60% 10%,
-            #0b1012 40%,
-            #f4f7fc55,
-            #0b1012 60%
-        );
-    font-size: 120px;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: rotatelight
-            3s ease-in-out infinite
-            alternate;
+  background-image: 
+    conic-gradient(
+      from var(--rotate) at 60% 10%,
+      #0b1012 40%,
+      #f4f7fc55,
+      #0b1012 60%
+    );
+  font-size: 120px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rotatelight 3s ease-in-out infinite alternate;
 }
 
-@keyframes rotatelight{
-    from {
-        --rotate: 0.15turn
-    }
-    to {
-        --rotate: -0.15turn;
-    }
+@keyframes rotatelight {
+  from {
+    --rotate: 0.15turn
+  }
+  to {
+    --rotate: -0.15turn;
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Section transitions */
+section {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section Spacing */
+section {
+  padding: 4rem 0;
+}
+
+/* About Section Layout */
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Interactive Elements */
+.interactive {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.interactive:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Card and container styles */
+.glass-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.glass-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.06);
+}
+
+/* Typography */
+h1, h2, h3 {
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .glass-container {
+    padding: 1.5rem;
+  }
 }
