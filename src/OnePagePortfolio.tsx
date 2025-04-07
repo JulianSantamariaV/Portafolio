@@ -8,6 +8,7 @@ import { CarouselMain } from "./components/CarouselMain";
 import { technologies } from "./components/data/technologies";
 
 export default function OnePagePortfolio() {
+
   const name: string = "Julian";
   const role: string = "Full Stack Developer";
 

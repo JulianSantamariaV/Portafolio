@@ -1,16 +1,37 @@
-# Dependencias de Node.js
+# Node modules
 node_modules/
-pnpm-lock.yaml
+.pnpm/
+.pnpm-debug.log
 
-# Archivos de compilación y caché
+# Directorios de construcción
 dist/
+build/
 .vite/
 .vscode/
 .DS_Store
 *.log
 npm-debug.log*
 
-# Configuración de entorno
+# Dependencias de Vite
+.vite/deps/
+
+# Archivos de entorno
 .env
 .env.local
-.env.*.local
+.env.development
+.env.production
+.env.test
+
+# Cache de TypeScript
+*.tsbuildinfo
+
+# Archivos de logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
